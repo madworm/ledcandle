@@ -65,7 +65,7 @@ volatile uint8_t sleep_requested = 0;
 
 int main(void)
 {
-	// Attiny13A fuse setting: -U lfuse:w:0x7A:m -U hfuse:w:0xFB:m
+	// Attiny13A fuse setting: -U lfuse:w:0x79:m -U hfuse:w:0xFB:m
 	//
 	// set system-clock prescaler to 1/8
 	// 4.8MHz RC-oscillator --> 600kHz system-clock
@@ -174,7 +174,7 @@ ISR(TIM0_COMPA_vect)
 
 	// increase system-clock
 	CLKPR = _BV(CLKPCE);	// set CLocK Prescaler Change Enable bit
-	CLKPR = 0;		// set system-clock prescaler to 1 --> full 9.6MHz
+	CLKPR = 0;		// set system-clock prescaler to 1 --> full 4.8MHz
 
 	// Binary-weighted PWM generation - BEGIN
 
